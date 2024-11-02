@@ -22,24 +22,36 @@ const NavBar = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <NavLink className={'text-2xl hover:bg-base-200 rounded-lg py-2 px-4'} to='/'>
+                        <NavLink className={({ isActive }) => `btn text-xl rounded-lg py-2 px-4 
+                font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`
+                        } to='/'>
                             Home</NavLink>
-                        <NavLink className={'text-2xl hover:bg-base-200 rounded-lg py-2 px-4'} to='/coffees'>
+                        <NavLink className={({ isActive }) => `btn text-xl rounded-lg py-2 px-4 
+                font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`
+                        } to='/coffees'>
                             Coffees</NavLink>
-                        <NavLink className={'text-2xl hover:bg-base-200 rounded-lg py-2 px-4'} to='/dashboard'>
+                        <NavLink className={({ isActive }) => `btn text-xl rounded-lg py-2 px-4 
+                font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`
+                        } to='/dashboard'>
                             Dashboard</NavLink>
 
                     </ul>
                 </div>
-                <NavLink className="btn btn-ghost text-xl" to='/'>COFFEE_BOOK</NavLink>
+                <NavLink className="btn text-xl" to='/'>COFFEE_BOOK</NavLink>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 gap-8">
-                    <NavLink className={'text-2xl hover:bg-base-200 rounded-lg py-2 px-4'} to='/'>
+                    <NavLink className={({ isActive }) => `btn text-xl rounded-lg py-2 px-4 
+                font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`
+                        } to='/'>
                         Home</NavLink>
-                    <NavLink className={'text-2xl hover:bg-base-200 rounded-lg py-2 px-4'} to='/coffees'>
+                    <NavLink className={({ isActive }) => `btn text-xl rounded-lg py-2 px-4 
+                font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`
+                        } to='/coffees'>
                         Coffees</NavLink>
-                    <NavLink className={'text-2xl hover:bg-base-200 rounded-lg py-2 px-4'} to='/dashboard'>
+                    <NavLink className={({ isActive }) => `btn text-xl rounded-lg py-2 px-4 
+                font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`
+                        } to='/dashboard'>
                         Dashboard</NavLink>
                 </ul>
             </div>
