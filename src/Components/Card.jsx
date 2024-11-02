@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
+import { FaTrashAlt } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 
-const Card = ({ coffee }) => {
+const Card = ({ coffee, handleRemove }) => {
+    const {pathname} = useLocation();
+    // const {pathnam} = location;
+    console.log(pathname)
     const { name, image, category, origin, type, id, rating, popularity } = coffee || {};
     return (
-        <div>
+        <div className="flex relative">
             <Link
                 to={`/coffees/${id}`}
                 className='transition  hover:scale-105 shadow-xl rounded-xl overflow-hidden'
@@ -20,6 +24,11 @@ const Card = ({ coffee }) => {
                     <p>Popular: {popularity}</p>
                 </div>
             </Link>
+            {
+                pathname === '/dashboard' && (<div
+                    onClick={()=>handleRemove(id)}
+                    className="absolute -top-5 -right-5 p-4 bg-warning rounded-full cursor-pointer"><FaTrashAlt size={20}></FaTrashAlt> </div>)
+            }
         </div>
     );
 };

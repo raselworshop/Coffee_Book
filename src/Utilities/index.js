@@ -17,12 +17,18 @@ const storedAllFav = () => {
 const addFavorite = coffee => {
     const favorite = storedAllFav();
     const isExist = favorite.find(item => item.id === coffee.id);
-    if(isExist){ return toast.success('Successfully added to Favorite')}
+    if(isExist){ }
     favorite.push(coffee)
     localStorage.setItem("favorites", JSON.stringify(favorite))
+    toast.success('Successfully added to Favorite')
 }
 
 // and remove a coffee from local storage
+const removeFavorite = id =>{
+    const favorite = storedAllFav();
+    const remaining = favorite.filter(coffee => coffee.id !== id)
+    localStorage.setItem("favorites", JSON.stringify(remaining));
+    toast.success('Successfully removed from Favorite');
+}
 
-
-export { addFavorite, storedAllFav }
+export { addFavorite, storedAllFav, removeFavorite }
